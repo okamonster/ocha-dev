@@ -25,9 +25,20 @@ export const Skills = () => {
         animation={`${fadeIn} 1s forwards 3s`}
       >
         <SimpleGrid gap={'5px'} columns={[1, 2, 3]}>
-          <SkillCard />
-          <SkillCard />
-          <SkillCard />
+          <SkillCard
+            imageUrl="/images/javascript.png"
+            categorie={['language']}
+            genle={['web', 'front-end']}
+          >
+            JavaScript
+          </SkillCard>
+          <SkillCard
+            imageUrl="/images/typescript.png"
+            categorie={['language']}
+            genle={['web', 'front-end', 'back-end']}
+          >
+            TypeScript
+          </SkillCard>
         </SimpleGrid>
         <LinkButton href="skills">もっと見る</LinkButton>
       </Box>
@@ -35,7 +46,14 @@ export const Skills = () => {
   )
 }
 
-export const SkillCard = () => {
+type cardProps = {
+  children: React.ReactNode
+  imageUrl: string
+  categorie: Array<string>
+  genle: Array<string>
+}
+
+const SkillCard = ({ children, imageUrl, categorie, genle }: cardProps) => {
   return (
     <Box
       bg={'#FFFFFF'}
@@ -45,30 +63,36 @@ export const SkillCard = () => {
       gap={'5px'}
       display={'grid'}
     >
-      <BadgeBox></BadgeBox>
+      <BadgeBox badge={categorie} />
       <Box
         display={'flex'}
         gap={'10px'}
         justifyContent={'flex-start'}
-        minWidth={300}
+        minWidth={[100]}
+        alignItems={'center'}
       >
-        <Image src="" rounded={'3xl'} h={70} w={70} background={'blue'} />
+        <Image src={imageUrl} rounded={'3xl'} h={70} w={70} />
         <Box>
-          <Text fontWeight={'bold'}>TypeScript</Text>
-          <Text>頑張ってる</Text>
-
-          <BadgeBox></BadgeBox>
+          <Text fontWeight={'bold'}>{children}</Text>
+          <BadgeBox badge={genle} />
         </Box>
       </Box>
     </Box>
   )
 }
 
-const BadgeBox = () => {
+type badgesProps = {
+  badge: Array<string>
+}
+
+const BadgeBox = ({ badge }: badgesProps) => {
   return (
-    <Box display={'flex'} gap={['5px', '8px']}>
-      <Badge>aaa</Badge>
-      <Badge>hogehoge</Badge>
+    <Box display={'flex'} gap={['5px', '8px']} flexWrap={'wrap'}>
+      {badge.map((m, index) => (
+        <Badge key={index} bg="#EAEAFA" color={'#A3A0D3'}>
+          {m}
+        </Badge>
+      ))}
     </Box>
   )
 }
