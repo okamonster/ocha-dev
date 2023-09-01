@@ -1,10 +1,10 @@
 import { Box, Heading, Text } from '@chakra-ui/react'
+import { SectionTitle } from './SectionTitle'
 
 export const Contact = () => {
   return (
     <Box>
-      <Heading borderBottom={'solid 1px #8686F4'}>CONTACT ME</Heading>
-      <Text fontFamily={'sans-serif'}>お問い合わせ</Text>
+      <SectionTitle title={'CONTRACT'} description={'お問い合わせ'} />
     </Box>
   )
 }

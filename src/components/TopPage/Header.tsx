@@ -9,7 +9,7 @@ const container = css({
   padding: '0 20px',
   background: '#FFFFFF',
   height: 60,
-  boxShadow: '',
+  border: 'solid 1px #E0E0E0',
 })
 
 const title = css({})
