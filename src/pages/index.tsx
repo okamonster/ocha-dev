@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         <footer
           style={{
             width: '100%',
-            background: '#3E39A2',
+
             height: 40,
             bottom: 0,
           }}
