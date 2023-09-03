@@ -109,7 +109,9 @@ const ContactCard = ({
       <Box display={'flex'} gap={'10px'}>
         {children}
       </Box>
-      <Box>{contactId && <Badge>{contactId}</Badge>}</Box>
+      <Text fontSize={12} color={'#D3D3D3'}>
+        {contactId}
+      </Text>
     </Box>
   )
 }
