@@ -51,13 +51,13 @@ const skills = [
     imageUrl: '/images/matlab.png',
     name: 'MATLAB',
     categorie: ['language'],
-    genle: ['Math', '嫌い'],
+    genle: ['Math'],
   },
   {
     imageUrl: '/images/verilog.png',
     name: 'Verilog',
     categorie: ['language'],
-    genle: ['HDL', 'めっちゃ嫌い'],
+    genle: ['HDL'],
   },
   {
     imageUrl: '/images/express.png',
@@ -112,7 +112,7 @@ const skills = [
     imageUrl: '/images/latex.png',
     name: 'LaTeX',
     categorie: ['Software'],
-    genle: ['Word滅びろ'],
+    genle: undefined,
   },
 ]
 
@@ -150,7 +150,7 @@ type cardProps = {
   children: React.ReactNode
   imageUrl: string
   categorie: Array<string>
-  genle: Array<string>
+  genle?: Array<string>
 }
 
 const SkillCard = ({ children, imageUrl, categorie, genle }: cardProps) => {
@@ -182,15 +182,15 @@ const SkillCard = ({ children, imageUrl, categorie, genle }: cardProps) => {
 }
 
 type badgesProps = {
-  badge: Array<string>
+  badge?: Array<string>
 }
 
 const BadgeBox = ({ badge }: badgesProps) => {
   return (
     <Box display={'flex'} gap={['5px', '8px']} flexWrap={'wrap'}>
-      {badge.map((m, index) => (
+      {badge?.map((text, index) => (
         <Badge key={index} bg="#EAEAFA" color={'#A3A0D3'}>
-          {m}
+          {text}
         </Badge>
       ))}
     </Box>
