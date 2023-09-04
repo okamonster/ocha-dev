@@ -1,5 +1,5 @@
 import { Box, Divider, Image, SimpleGrid, Text } from '@chakra-ui/react'
-import { SectionTitle } from './SectionTitle'
+import { SectionTitle } from '../SectionTitle'
 import { fadeIn } from '@/constants/animation'
 
 export const Blog = () => {

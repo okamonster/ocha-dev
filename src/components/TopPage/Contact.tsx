@@ -6,7 +6,7 @@ import {
   SimpleGrid,
   Text,
 } from '@chakra-ui/react'
-import { SectionTitle } from './SectionTitle'
+import { SectionTitle } from '../SectionTitle'
 import { fadeIn } from '@/constants/animation'
 import { FaGithub, FaInstagram, FaTwitter, FaXbox } from 'react-icons/fa'
 import Link from 'next/link'
