@@ -1,5 +1,5 @@
 import { Box, Image, Text } from '@chakra-ui/react'
-import { SectionTitle } from './SectionTitle'
+import { SectionTitle } from '../SectionTitle'
 
 import { LinkButton } from '../Button/LinkButton'
 import { fadeIn } from '@/constants/animation'

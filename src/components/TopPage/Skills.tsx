@@ -1,5 +1,5 @@
 import { Box, SimpleGrid, Image, Badge, Text } from '@chakra-ui/react'
-import { SectionTitle } from '@/components/TopPage/SectionTitle'
+import { SectionTitle } from '@/components/SectionTitle'
 /** @jsxImportSource @emotion/react */
 import { LinkButton } from '../Button/LinkButton'
 import { fadeIn } from '@/constants/animation'
@@ -140,7 +140,9 @@ export const Skills = () => {
             </SkillCard>
           ))}
         </SimpleGrid>
-        <LinkButton href="skills">もっと見る</LinkButton>
+        {/**
+         <LinkButton href="skills">もっと見る</LinkButton>
+          **/}
       </Box>
     </Box>
   )

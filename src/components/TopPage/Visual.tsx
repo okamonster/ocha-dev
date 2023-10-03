@@ -32,7 +32,7 @@ export const Visual = () => {
         border={'solid 5px'}
         zIndex={1}
       >
-        <Heading fontSize={[20, 30]}>OCHA-TECH.dev</Heading>
+        <Heading fontSize={[20, 30]}>OCHA .dev</Heading>
       </Box>
     </Box>
   )
