@@ -140,7 +140,9 @@ export const Skills = () => {
             </SkillCard>
           ))}
         </SimpleGrid>
-        <LinkButton href="skills">もっと見る</LinkButton>
+        {/**
+         <LinkButton href="skills">もっと見る</LinkButton>
+          **/}
       </Box>
     </Box>
   )
