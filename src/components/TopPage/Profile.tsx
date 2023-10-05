@@ -1,4 +1,4 @@
-import { Box, Image, Text } from '@chakra-ui/react'
+import { Box, Image, List, Text, UnorderedList } from '@chakra-ui/react'
 import { SectionTitle } from '../SectionTitle'
 
 import { LinkButton } from '../Button/LinkButton'
@@ -25,7 +25,19 @@ export const Profile = () => {
             株式会社メンヘラテクノロジー
           </ProfileSection>
           <ProfileSection title="好きな技術">three.js / WebXR</ProfileSection>
-          <ProfileSection title="趣味">コード書いて気絶</ProfileSection>
+          <ProfileSection title="趣味">
+            <UnorderedList>
+              <List>
+                <Text>コード書いて気絶</Text>
+              </List>
+              <List>
+                <Text>コーヒー</Text>
+              </List>
+              <List>
+                <Text>スワンスワンズ</Text>
+              </List>
+            </UnorderedList>
+          </ProfileSection>
           <LinkButton href={'/profile'}>もっと見る</LinkButton>
         </Box>
       </Box>
@@ -84,7 +96,7 @@ const ProfileSection = ({ title, children }: sectionProps) => {
       <Text fontWeight={'bold'} color={'#A3A0D3'} fontSize={[12, 16]}>
         {title}
       </Text>
-      <Text>{children}</Text>
+      <>{children}</>
     </Box>
   )
 }
