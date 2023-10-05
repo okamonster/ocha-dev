@@ -23,7 +23,7 @@ const Home: NextPage = () => {
         <meta property="og:site_name" content={'お茶のポートフォリオ'} />
         <meta property="og:description" content={'どうも、お茶です'} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={'/images/ogp.png'} />
+        <meta property="og:image" content={'https://お茶.dev/images/ogp.png'} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
