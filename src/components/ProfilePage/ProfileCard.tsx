@@ -31,7 +31,7 @@ export const ProfileCard = () => {
             </Link>
           </li>
           <li>
-            <Link href={'https://alice.helixcode.net/~bando/Lab/'}>
+            <Link href={'https://www.menhera-technology.com/'}>
               <Text>株式会社メンヘラテクノロジー</Text>
             </Link>
           </li>
