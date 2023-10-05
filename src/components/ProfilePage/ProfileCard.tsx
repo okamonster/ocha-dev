@@ -24,9 +24,18 @@ export const ProfileCard = () => {
         <Text>立命館大学理工学部電子情報工学科</Text>
         <Text>株式会社メンヘラテクノロジー</Text>
         <Badge>Link</Badge>
-        <Link href={'https://alice.helixcode.net/~bando/Lab/'}>
-          <Text>近畿大学工業高等専門学校量子情報研究室</Text>
-        </Link>
+        <ul>
+          <li>
+            <Link href={'https://alice.helixcode.net/~bando/Lab/'}>
+              <Text>近畿大学工業高等専門学校量子情報研究室</Text>
+            </Link>
+          </li>
+          <li>
+            <Link href={'https://alice.helixcode.net/~bando/Lab/'}>
+              <Text>株式会社メンヘラテクノロジー</Text>
+            </Link>
+          </li>
+        </ul>
       </Box>
     </Box>
   )
