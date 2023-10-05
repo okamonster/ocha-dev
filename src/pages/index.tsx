@@ -33,7 +33,7 @@ const Home: NextPage = () => {
         <meta name="twitter:description" content="どうも、お茶です" />
         <meta
           name="twitter:image"
-          content="https://xn--t8jy01w.dev//images/ogp.png"
+          content="https://xn--t8jy01w.dev/images/ogp.png"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
