@@ -2,7 +2,6 @@ import { DefaultLayout } from '@/components/Layout/DefaultLayout'
 import { Career } from '@/components/ProfilePage/Career'
 import { Profile } from '@/components/ProfilePage/Profile'
 import { Header } from '@/components/TopPage/Header'
-import { Box } from '@chakra-ui/react'
 import { NextPage } from 'next'
 
 const ProfilePage: NextPage = () => {

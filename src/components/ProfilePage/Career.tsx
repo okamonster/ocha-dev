@@ -4,7 +4,7 @@ import { Timeline } from '@mantine/core'
 
 export const Career = () => {
   return (
-    <Box display={'grid'} gap={'20px'}>
+    <Box display={'grid'} gap={'20px'} mb={'20px'}>
       <SectionTitle title="CAREER" description="経歴" />
       <Timeline color="violet" active={3}>
         <Timeline.Item bulletSize={24}>
