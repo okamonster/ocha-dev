@@ -31,7 +31,7 @@ export const Profile = () => {
                 <Text>コード書いて気絶</Text>
               </List>
               <List>
-                <Text>コーヒー</Text>
+                <Text>コーヒー飲んで気絶</Text>
               </List>
               <List>
                 <Text>スワンスワンズ</Text>
