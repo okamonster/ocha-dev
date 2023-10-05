@@ -22,7 +22,7 @@ export const Career = () => {
           <Text>2022/04 -</Text>
         </Timeline.Item>
         <Timeline.Item bulletSize={24}>
-          <Text>株式会社メンヘラテクノロジー 業務委託</Text>
+          <Text>株式会社メンヘラテクノロジー</Text>
           <Text>2023/01 -</Text>
         </Timeline.Item>
         <Timeline.Item bulletSize={24}>
