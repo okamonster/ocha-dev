@@ -23,12 +23,18 @@ const Home: NextPage = () => {
         <meta property="og:site_name" content={'お茶のポートフォリオ'} />
         <meta property="og:description" content={'どうも、お茶です'} />
         <meta property="og:type" content="website" />
-        <meta property="og:image" content={'https://お茶.dev/images/ogp.png'} />
+        <meta
+          property="og:image"
+          content={'https://xn--t8jy01w.dev//images/ogp.png'}
+        />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@makura_nageru" />
         <meta name="twitter:title" content="お茶.dev" />
         <meta name="twitter:description" content="どうも、お茶です" />
-        <meta name="twitter:image" content="https://お茶.dev/ogp.png" />
+        <meta
+          name="twitter:image"
+          content="https://xn--t8jy01w.dev//images/ogp.png"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
