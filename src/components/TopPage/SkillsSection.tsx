@@ -116,7 +116,7 @@ const skills = [
   },
 ]
 
-export const Skills = () => {
+export const SkillsSection = () => {
   return (
     <Box display={'grid'} gap={'20px'}>
       <SectionTitle title="SKILLS" description="技術スキル" />

@@ -11,7 +11,7 @@ import { fadeIn } from '@/constants/animation'
 import { FaGithub, FaInstagram, FaTwitter, FaXbox } from 'react-icons/fa'
 import Link from 'next/link'
 
-export const Contact = () => {
+export const ContactSection = () => {
   return (
     <Box display={'grid'} gap={'20px'}>
       <SectionTitle title={'CONTACT'} description={'お問い合わせ'} />
