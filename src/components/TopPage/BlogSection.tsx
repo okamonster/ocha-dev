@@ -1,10 +1,15 @@
-import { Badge, Box, Divider, Image, SimpleGrid, Text } from '@chakra-ui/react'
+import { Badge, Box, Image, SimpleGrid, Text } from '@chakra-ui/react'
 import { SectionTitle } from '../SectionTitle'
 import { fadeIn } from '@/constants/animation'
-import { Card, Title } from '@mantine/core'
-import Link from 'next/link'
+import { Blog } from '@/entitie/blog'
+import { BlogCard } from '@/components/Blog/BlogCard'
+import { LinkButton } from '../Button/LinkButton'
 
-export const BlogSection = () => {
+type Props = {
+  blogs: Blog[]
+}
+
+export const BlogSection = ({ blogs }: Props) => {
   return (
     <Box display={'grid'}>
       <SectionTitle title="BLOG" description="ブログはじめました" />
@@ -17,30 +22,12 @@ export const BlogSection = () => {
         animation={`${fadeIn} 1s forwards 3s`}
       >
         <SimpleGrid columns={[1, 2, 3]} alignItems={'center'} gap={'10px'}>
-          <BlogCard />
+          {blogs.map((blog) => (
+            <BlogCard key={blog.id} blog={blog} />
+          ))}
         </SimpleGrid>
+        <LinkButton href="/blog">ブログ一覧</LinkButton>
       </Box>
     </Box>
-  )
-}
-
-const BlogCard = () => {
-  return (
-    <Link href={'/blog'}>
-      <Card shadow="lg">
-        <Card.Section>
-          <Image src="/images/ogp.png" maxH={'180px'} />
-        </Card.Section>
-
-        <Card.Section p={10}>
-          <Text fontSize={'16px'}>記事タイトル</Text>
-          <Text>yyyy/mm/dd</Text>
-          <Box display={'flex'} gap={'10px'}>
-            <Badge>#Tag</Badge>
-            <Badge>#Tag</Badge>
-          </Box>
-        </Card.Section>
-      </Card>
-    </Link>
   )
 }
