@@ -11,12 +11,5 @@ export interface Blog {
     height: number
     width: number
   }
-  categorie: {
-    id: string
-    createdAt: string
-    updatedAt: string
-    publishedAt: string
-    revisedAt: string
-    name: string
-  }
+  tag: string
 }
