@@ -23,7 +23,7 @@ const BlogDetail: NextPage<BlogPageProps> = ({ id, blog }: Props) => {
   return (
     <>
       <DeafaultHead
-        title="お茶.dev"
+        title={blog.title}
         description="お茶/岡本和輝のブログ"
         ogpImage={blog.OGP.url}
         path={`blog/${id}`}
