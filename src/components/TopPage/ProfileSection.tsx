@@ -4,7 +4,7 @@ import { SectionTitle } from '../SectionTitle'
 import { LinkButton } from '../Button/LinkButton'
 import { fadeIn } from '@/constants/animation'
 
-export const Profile = () => {
+export const ProfileSection = () => {
   return (
     <Box display={'grid'} gap={'20px'}>
       <SectionTitle title="PROFILE" description="自己紹介/経歴" />
@@ -19,13 +19,13 @@ export const Profile = () => {
         <ProfileImage imageUrl={'/images/profile.jpeg'} />
         <Box display={'flex'} flexDirection={'column'} gap={'5px'}>
           <ProfileName name="お茶 / 岡本 和輝" profession="Web Engineer" />
-          <ProfileSection title="所属">
+          <Section title="所属">
             立命館大学電子情報工学科
             <br />
             株式会社メンヘラテクノロジー
-          </ProfileSection>
-          <ProfileSection title="好きな技術">three.js / WebXR</ProfileSection>
-          <ProfileSection title="趣味">
+          </Section>
+          <Section title="好きな技術">three.js / WebXR</Section>
+          <Section title="趣味">
             <UnorderedList>
               <List>
                 <Text>コード書いて気絶</Text>
@@ -37,7 +37,7 @@ export const Profile = () => {
                 <Text>スワンスワンズ</Text>
               </List>
             </UnorderedList>
-          </ProfileSection>
+          </Section>
           <LinkButton href={'/profile'}>もっと見る</LinkButton>
         </Box>
       </Box>
@@ -90,7 +90,7 @@ type sectionProps = {
   title: string
   children: React.ReactNode
 }
-const ProfileSection = ({ title, children }: sectionProps) => {
+const Section = ({ title, children }: sectionProps) => {
   return (
     <Box>
       <Text fontWeight={'bold'} color={'#A3A0D3'} fontSize={[12, 16]}>
