@@ -1,16 +1,12 @@
 import { Article } from '@/components/Blog/Article'
 import { DeafaultHead } from '@/components/DefaultHead'
 import { DefaultLayout } from '@/components/Layout/DefaultLayout'
-import { SectionTitle } from '@/components/SectionTitle'
 import { Header } from '@/components/TopPage/Header'
-import { Visual } from '@/components/TopPage/Visual'
-import { fadeIn } from '@/constants/animation'
 import { Blog } from '@/entitie/blog'
 import { client } from '@/libs/client'
 import { Box, Text } from '@chakra-ui/react'
 import dayjs from 'dayjs'
 import { InferGetStaticPropsType, NextPage } from 'next'
-import { useRouter } from 'next/router'
 
 type BlogPageProps = InferGetStaticPropsType<typeof getStaticProps>
 
