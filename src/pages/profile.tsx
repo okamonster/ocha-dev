@@ -5,7 +5,6 @@ import { ProfileDiscription } from '@/components/ProfilePage/ProfileDescription'
 import { Header } from '@/components/TopPage/Header'
 import { NextPage } from 'next'
 import { Text } from '@chakra-ui/react'
-import Head from 'next/head'
 import { DeafaultHead } from '@/components/DefaultHead'
 
 const ProfilePage: NextPage = () => {

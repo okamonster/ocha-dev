@@ -1,5 +1,3 @@
-import Head from 'next/head'
-
 import { DefaultLayout } from '@/components/Layout/DefaultLayout'
 import { Header } from '@/components/TopPage/Header'
 import { Visual } from '@/components/TopPage/Visual'
