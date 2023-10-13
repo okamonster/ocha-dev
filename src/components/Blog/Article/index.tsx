@@ -6,7 +6,6 @@ type Props = {
 }
 
 export const Article = ({ blog }: Props): React.ReactElement => {
-  console.log(blog.content)
   return (
     <Box
       p={['30px', '30px 85px']}
