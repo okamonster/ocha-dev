@@ -5,9 +5,11 @@ import { SectionTitle } from '@/components/SectionTitle'
 import { Header } from '@/components/TopPage/Header'
 import { fadeIn } from '@/constants/animation'
 import { Blog } from '@/entitie/blog'
+import { sendLogEvent } from '@/libs/analytics'
 import { client } from '@/libs/client'
 import { Box, SimpleGrid } from '@chakra-ui/react'
 import { InferGetStaticPropsType, NextPage } from 'next'
+import { useEffect } from 'react'
 
 type BlogPageProps = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -16,6 +18,9 @@ type Props = {
 }
 
 const BlogPage: NextPage<BlogPageProps> = ({ blogs }: Props) => {
+  useEffect(() => {
+    sendLogEvent('view_blog', undefined)
+  }, [])
   return (
     <>
       <DeafaultHead

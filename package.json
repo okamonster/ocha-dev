@@ -23,6 +23,7 @@
     "dayjs": "^1.11.10",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.12",
+    "firebase": "^10.5.0",
     "framer-motion": "^10.13.1",
     "microcms-js-sdk": "^2.6.1",
     "next": "13.4.12",
