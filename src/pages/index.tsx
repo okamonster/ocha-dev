@@ -10,6 +10,9 @@ import { InferGetStaticPropsType, NextPage } from 'next'
 import { client } from '@/libs/client'
 import { Blog } from '@/entitie/blog'
 import { DeafaultHead } from '@/components/DefaultHead'
+import { useEffect } from 'react'
+import { sendLogEvent } from '@/libs/analytics'
+import { eventNames } from 'process'
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -18,6 +21,9 @@ type Props = {
 }
 
 const Home: NextPage<HomePageProps> = ({ blogs }: Props) => {
+  useEffect(() => {
+    sendLogEvent('view_top', undefined)
+  }, [])
   return (
     <>
       <DeafaultHead

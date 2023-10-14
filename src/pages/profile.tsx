@@ -6,8 +6,13 @@ import { Header } from '@/components/TopPage/Header'
 import { NextPage } from 'next'
 import { Text } from '@chakra-ui/react'
 import { DeafaultHead } from '@/components/DefaultHead'
+import { useEffect } from 'react'
+import { sendLogEvent } from '@/libs/analytics'
 
 const ProfilePage: NextPage = () => {
+  useEffect(() => {
+    sendLogEvent('view_profile', undefined)
+  }, [])
   return (
     <>
       <DeafaultHead

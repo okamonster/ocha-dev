@@ -3,10 +3,12 @@ import { DeafaultHead } from '@/components/DefaultHead'
 import { DefaultLayout } from '@/components/Layout/DefaultLayout'
 import { Header } from '@/components/TopPage/Header'
 import { Blog } from '@/entitie/blog'
+import { sendLogEvent } from '@/libs/analytics'
 import { client } from '@/libs/client'
 import { Box, Text } from '@chakra-ui/react'
 import dayjs from 'dayjs'
 import { InferGetStaticPropsType, NextPage } from 'next'
+import { useEffect } from 'react'
 
 type BlogPageProps = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -16,6 +18,10 @@ type Props = {
 }
 
 const BlogDetail: NextPage<BlogPageProps> = ({ id, blog }: Props) => {
+  useEffect(() => {
+    sendLogEvent('read_blog', undefined)
+    sendLogEvent('read_blog_article', { title: blog.title })
+  }, [])
   return (
     <>
       <DeafaultHead
