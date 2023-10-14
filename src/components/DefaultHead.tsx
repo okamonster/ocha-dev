@@ -21,6 +21,10 @@ export const DeafaultHead = ({ title, ogpImage, description, path }: Props) => {
             : 'https://www.xn--t8jy01w.dev/'
         }
       />
+      <meta
+        name="google-site-verification"
+        content="f5ovWE1TWUnqmRqOyAVOxAIwugeDmIRusp6vLjlGUNg"
+      />
       <meta property="og:title" content={title} />
       <meta property="og:site_name" content={title} />
       <meta property="og:description" content={description} />
