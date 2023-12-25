@@ -120,16 +120,15 @@ const skillsPlaceHolder: Skill[] = [
   },
 ]
 
-const [skills, setSkills] = useState<Skill[]>([])
-useEffect(() => {
-  const func = async () => {
-    const fetchSkills = await fetchSkillsUseCase.execute()
-    setSkills(fetchSkills)
-  }
-  func()
-}, [])
-
 export const SkillsSection = () => {
+  const [skills, setSkills] = useState<Skill[]>([])
+  useEffect(() => {
+    const func = async () => {
+      const fetchSkills = await fetchSkillsUseCase.execute()
+      setSkills(fetchSkills)
+    }
+    func()
+  }, [])
   return (
     <Box display={'grid'} gap={'20px'}>
       <SectionTitle title="SKILLS" description="技術スキル" />
@@ -144,13 +143,12 @@ export const SkillsSection = () => {
         <SimpleGrid gap={'5px'} columns={[1, 2, 3]}>
           {skills.map((skill) => (
             <SkillCard
+              name={skill.name}
               imageUrl={skill.imageUrl}
               categorie={skill.categorie}
               genle={skill.genle}
               key={skill.name}
-            >
-              {skill.name}
-            </SkillCard>
+            />
           ))}
         </SimpleGrid>
         {/**
@@ -168,7 +166,7 @@ type cardProps = {
   genle?: Array<string>
 }
 
-const SkillCard = ({ children, imageUrl, categorie, genle }: cardProps) => {
+const SkillCard = ({ name, imageUrl, categorie, genle }: Skill) => {
   return (
     <Box
       bg={'#FFFFFF'}
@@ -190,7 +188,7 @@ const SkillCard = ({ children, imageUrl, categorie, genle }: cardProps) => {
       >
         <Image src={imageUrl} rounded={'3xl'} h={70} w={70} />
         <Box>
-          <Text fontWeight={'bold'}>{children}</Text>
+          <Text fontWeight={'bold'}>{name}</Text>
           <BadgeBox badge={genle} />
         </Box>
       </Box>
