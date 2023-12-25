@@ -3,118 +3,131 @@ import { SectionTitle } from '@/components/SectionTitle'
 /** @jsxImportSource @emotion/react */
 import { LinkButton } from '../Button/LinkButton'
 import { fadeIn } from '@/constants/animation'
+import { Skill } from '@/entitie/skill'
+import FetchSkillsUseCase from '@/usecases/skills/fetchSkillsUsecase'
+import { useEffect, useState } from 'react'
 
-const skills = [
+const fetchSkillsUseCase = new FetchSkillsUseCase()
+const skillsPlaceHolder: Skill[] = [
   {
     imageUrl: '/images/html.png',
     name: 'HTML',
-    categorie: ['markup'],
+    categorie: 'markup',
     genle: ['web', 'front-end'],
   },
   {
     imageUrl: '/images/css.png',
     name: 'CSS',
-    categorie: ['markup'],
+    categorie: 'markup',
     genle: ['web', 'front-end'],
   },
   {
     imageUrl: '/images/javascript.png',
     name: 'JavaScript',
-    categorie: ['language'],
+    categorie: 'language',
     genle: ['web', 'front-end'],
   },
   {
     imageUrl: '/images/typescript.png',
     name: 'TypeScript',
-    categorie: ['language'],
+    categorie: 'language',
     genle: ['web', 'front-end', 'back-end'],
   },
   {
     imageUrl: '/images/php.png',
     name: 'PHP',
-    categorie: ['language'],
+    categorie: 'language',
     genle: ['web', 'back-end'],
   },
   {
     imageUrl: '/images/java.png',
     name: 'Java',
-    categorie: ['language'],
+    categorie: 'language',
     genle: [],
   },
   {
     imageUrl: '/images/python.png',
     name: 'Python',
-    categorie: ['language'],
+    categorie: 'language',
     genle: ['web', 'back-end', 'ML'],
   },
   {
     imageUrl: '/images/matlab.png',
     name: 'MATLAB',
-    categorie: ['language'],
+    categorie: 'language',
     genle: ['Math'],
   },
   {
     imageUrl: '/images/verilog.png',
     name: 'Verilog',
-    categorie: ['language'],
+    categorie: 'language',
     genle: ['HDL'],
   },
   {
     imageUrl: '/images/express.png',
     name: 'Express',
-    categorie: ['framework'],
+    categorie: 'framework',
     genle: ['web', 'back-end'],
   },
   {
     imageUrl: '/images/react.png',
     name: 'React.js',
-    categorie: ['framework'],
+    categorie: 'framework',
     genle: ['web', 'front-end'],
   },
   {
     imageUrl: '/images/next.png',
     name: 'Next.js',
-    categorie: ['framework'],
+    categorie: 'framework',
     genle: ['web', 'front-end'],
   },
   {
     imageUrl: '/images/three.png',
     name: 'Three.js',
-    categorie: ['library'],
+    categorie: 'library',
     genle: ['webgl', 'XR'],
   },
   {
     imageUrl: '/images/mysql.png',
     name: 'MySQL',
-    categorie: ['DataBase'],
+    categorie: 'database',
     genle: ['RDB'],
   },
   {
     imageUrl: '/images/apache.png',
     name: 'Apache',
-    categorie: ['Runtime'],
+    categorie: 'runtime',
     genle: ['WebServer'],
   },
   {
     imageUrl: '/images/firebase.png',
     name: 'Firebase',
-    categorie: ['PlatForm'],
+    categorie: 'platform',
     genle: ['BaaS'],
   },
   {
     imageUrl: '/images/vercel.png',
     name: 'Vercel',
-    categorie: ['PlatForm'],
+    categorie: 'platform',
     genle: ['Hosting'],
   },
 
   {
     imageUrl: '/images/latex.png',
     name: 'LaTeX',
-    categorie: ['Software'],
+    categorie: 'software',
     genle: undefined,
   },
 ]
+
+const [skills, setSkills] = useState<Skill[]>([])
+useEffect(() => {
+  const func = async () => {
+    const fetchSkills = await fetchSkillsUseCase.execute()
+    setSkills(fetchSkills)
+  }
+  func()
+}, [])
 
 export const SkillsSection = () => {
   return (
@@ -151,7 +164,7 @@ export const SkillsSection = () => {
 type cardProps = {
   children: React.ReactNode
   imageUrl: string
-  categorie: Array<string>
+  categorie: string
   genle?: Array<string>
 }
 
@@ -165,7 +178,9 @@ const SkillCard = ({ children, imageUrl, categorie, genle }: cardProps) => {
       gap={'5px'}
       display={'grid'}
     >
-      <BadgeBox badge={categorie} />
+      <Badge bg="#EAEAFA" color={'#A3A0D3'}>
+        {categorie}
+      </Badge>
       <Box
         display={'flex'}
         gap={'10px'}
