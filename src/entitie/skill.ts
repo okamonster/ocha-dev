@@ -1,16 +1,6 @@
 export type Skill = {
   name: string
   imageUrl: string
-  categorie:
-    | 'markup'
-    | 'language'
-    | 'framework'
-    | 'library'
-    | 'database'
-    | 'runtime'
-    | 'platform'
-    | 'software'
-    | 'other'
-
+  categorie: string
   genle?: Array<string>
 }
