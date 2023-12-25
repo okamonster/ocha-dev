@@ -10,9 +10,12 @@ import { InferGetStaticPropsType, NextPage } from 'next'
 import { client } from '@/libs/client'
 import { Blog } from '@/entitie/blog'
 import { DeafaultHead } from '@/components/DefaultHead'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { sendLogEvent } from '@/libs/analytics'
 import { eventNames } from 'process'
+import { Skill } from '@/entitie/skill'
+import FetchSkillsUseCase from '@/usecases/skills/fetchSkillsUsecase'
+const fetchSkillsUseCase = new FetchSkillsUseCase()
 
 type HomePageProps = InferGetStaticPropsType<typeof getStaticProps>
 
@@ -21,7 +24,13 @@ type Props = {
 }
 
 const Home: NextPage<HomePageProps> = ({ blogs }: Props) => {
+  const [skills, setSkills] = useState<Skill[]>([])
   useEffect(() => {
+    const func = async () => {
+      const fetchSkills = await fetchSkillsUseCase.execute()
+      setSkills(fetchSkills)
+    }
+    func()
     sendLogEvent('view_top', undefined)
   }, [])
   return (
@@ -36,7 +45,7 @@ const Home: NextPage<HomePageProps> = ({ blogs }: Props) => {
         <Visual />
         <main style={{ padding: '0 10%', display: 'grid', gap: 20 }}>
           <ProfileSection />
-          <SkillsSection />
+          <SkillsSection skills={skills} />
           <BlogSection blogs={blogs} />
 
           {
