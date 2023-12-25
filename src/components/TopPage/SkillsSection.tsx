@@ -4,10 +4,7 @@ import { SectionTitle } from '@/components/SectionTitle'
 import { LinkButton } from '../Button/LinkButton'
 import { fadeIn } from '@/constants/animation'
 import { Skill } from '@/entitie/skill'
-import FetchSkillsUseCase from '@/usecases/skills/fetchSkillsUsecase'
-import { useEffect, useState } from 'react'
 
-const fetchSkillsUseCase = new FetchSkillsUseCase()
 const skillsPlaceHolder: Skill[] = [
   {
     imageUrl: '/images/html.png',
@@ -120,15 +117,11 @@ const skillsPlaceHolder: Skill[] = [
   },
 ]
 
-export const SkillsSection = () => {
-  const [skills, setSkills] = useState<Skill[]>([])
-  useEffect(() => {
-    const func = async () => {
-      const fetchSkills = await fetchSkillsUseCase.execute()
-      setSkills(fetchSkills)
-    }
-    func()
-  }, [])
+type Props = {
+  skills: Skill[]
+}
+
+export const SkillsSection = ({ skills }: Props) => {
   return (
     <Box display={'grid'} gap={'20px'}>
       <SectionTitle title="SKILLS" description="技術スキル" />
