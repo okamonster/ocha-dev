@@ -12,9 +12,12 @@ export const DefaultLayout = ({ children }: Props) => {
         position: 'relative',
         minHeight: '100vh',
         background: '#F7F7F9',
+        width: '100%',
       }}
     >
-      <div style={{ display: 'grid', width: '100%' }}>{children}</div>
+      <div style={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
+        {children}
+      </div>
     </div>
   )
 }
